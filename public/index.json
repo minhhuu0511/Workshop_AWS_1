@@ -1,0 +1,85 @@
+[
+{
+	"uri": "//localhost:1313/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Elastic Compute Cloud (EC2) là một dịch vụ đám mây của AWS (Amazon Web Services) cung cấp các máy chủ ảo để chạy các ứng dụng. EC2 cho phép người dùng tạo và quản lý các phiên bản máy chủ ảo (instance) với nhiều hệ điều hành khác nhau như Linux và Windows. Dịch vụ này linh hoạt, giúp người dùng dễ dàng mở rộng hoặc thu gọn tài nguyên tính toán theo nhu cầu của ứng dụng.\nVới việc sử dụng EC2, bạn sẽ có được những ưu điểm sau:\nTính linh hoạt: Người dùng có thể chọn cấu hình phần cứng, hệ điều hành và mạng của máy chủ theo yêu cầu. Tự động mở rộng: Dịch vụ hỗ trợ tự động mở rộng (Auto Scaling) dựa trên lưu lượng truy cập hoặc tải của ứng dụng. Bảo mật: EC2 tích hợp với các dịch vụ bảo mật khác của AWS như IAM (Identity and Access Management), cho phép kiểm soát chi tiết quyền truy cập vào các phiên bản. Tính khả dụng cao: AWS cung cấp các tùy chọn để triển khai trên nhiều vùng (regions) và khu vực sẵn sàng (availability zones), đảm bảo hệ thống luôn hoạt động liên tục. Thanh toán theo sử dụng: Người dùng chỉ phải trả phí dựa trên tài nguyên mà họ sử dụng, giúp tối ưu hóa chi phí. Amazon RDS (Relational Database Service) là một dịch vụ quản lý cơ sở dữ liệu (CSDL) trên đám mây do AWS cung cấp. RDS giúp dễ dàng thiết lập, vận hành, và mở rộng cơ sở dữ liệu quan hệ một cách tự động, giúp người dùng tập trung vào phát triển ứng dụng mà không phải lo về quản lý hạ tầng. Dịch vụ này hỗ trợ nhiều hệ quản trị cơ sở dữ liệu khác nhau.\nVới việc sử dụng RDS, bạn sẽ có được những ưu điểm sau:\nQuản lý tự động: RDS tự động quản lý các tác vụ như sao lưu, vá lỗi, cập nhật phần mềm và sao chép dữ liệu. Điều này giúp giảm công việc quản lý thủ công cho người dùng. Tính mở rộng: Người dùng có thể dễ dàng mở rộng hoặc thu hẹp tài nguyên cơ sở dữ liệu theo nhu cầu, từ việc điều chỉnh kích thước ổ đĩa đến tăng giảm số lượng phiên bản (instance) cơ sở dữ liệu. Sao lưu và khôi phục: RDS hỗ trợ tính năng tự động sao lưu hàng ngày và tạo các điểm khôi phục (snapshot) để đảm bảo dữ liệu luôn được an toàn và có thể phục hồi khi cần thiết. Bảo mật tích hợp: RDS hỗ trợ mã hóa dữ liệu cả khi lưu trữ và truyền tải, đồng thời tích hợp với các dịch vụ bảo mật của AWS như IAM và VPC để kiểm soát truy cập và bảo vệ dữ liệu. Hiệu suất cao: Amazon RDS được tối ưu hóa để cung cấp hiệu suất ổn định với độ trễ thấp. Amazon Aurora, một cơ sở dữ liệu tương thích với MySQL và PostgreSQL, cung cấp hiệu năng cao hơn nhiều so với cơ sở dữ liệu MySQL thông thường. Hỗ trợ tính khả dụng cao: Với RDS Multi-AZ (Multi-Availability Zone), dữ liệu được sao chép tự động giữa các khu vực sẵn sàng khác nhau, đảm bảo rằng cơ sở dữ liệu luôn sẵn sàng trong trường hợp có sự cố. Ở bài thực hành này chúng ta sẽ chạy 1 ứng dụng CRUD đơn giản lên máy ảo EC2 và RDS để làm quen với 2 dịch vụ này. "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.1-create-vpc/",
+	"title": "Tạo VPC ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Lab VPC Truy cập giao diện quản trị dịch vụ VPC: Tìm kiếm VPC Click Your VPC. Click Create VPC. Click VPC and more. Nhập VPC Main vào Auto-generated. IPv4 CIDR block nhập 10.0.0.0/16. IPv6 CIDR block chọn No IPv6 CIDR block. Tenancy chọn Default. Number of Availability Zones Chọn 2. Number of Public và Number of Private chọn 2. NAT gateways Chọn None. VPC endpoints chọn S3 Gateway. Chọn 2 mục trong DNS options "
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "EC2 và RDS",
+	"tags": [],
+	"description": "",
+	"content": "Làm việc với EC2 + RDS Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về . Thực hành tạo kết nối đến máy chủ public và cơ sở dữ liệu RDS ở private subnet trong VPC.\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/",
+	"title": "Chuẩn bị VPC, EC2 và RDS ",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ cần tạo một VPC có 2 subnet public / private. Sau đó tạo 1 EC2 Instance Linux nằm trong public subnet, 1 EC2 Instance Windows nằm trong private subnet.\nTổng quan kiến trúc sau khi các bạn hoàn tất bước này sẽ như sau:\nNội dung Tạo VPC Tạo Security Group Tạo DBSubnet Group Tạo máy chủ EC2 Tạo RDS "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.2-create-secgroup/",
+	"title": "Tạo các security group",
+	"tags": [],
+	"description": "",
+	"content": "Tạo các security group Truy cập giao diện quản trị dịch vụ VPC Click Security Group. Click Create security group. Security group name: Nhập Web Server-SG Description: Nhập Allow SSH for servers in public subnet. VPC chọn VPC Main Inbound Thêm các rule sau: SSH, HTTP, HTTPS, Custom TCP với Source AnyWhere Outbound rule giữ nguyên Tiếp tục tạo Sercurity Group cho RDS Security group name: Nhập RDS-SG Description: Nhập Only access by EC2 Instances VPC: Chọn VPC Main Inbound Thêm rule MySQL/Aurora. Source AnyWhere Outbound rule giữ nguyên "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.3-create-dbsubnetgroup/",
+	"title": "Tạo DBSubnet Group ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo DBSubnet Group DB-Subnet Group Truy cập giao diện quản trị dịch vụ RDS: Click Subnet group. Click Create DB Subnet Group. Name: nhập DB-Subnet Group. Decription nhập Database. VPC: Chọn VPC Main. AZ: chọn us-east-1a, us-east-1b. Subnet chọn 2 Private Subnet. Chọn Create. "
+},
+{
+	"uri": "//localhost:1313/3-connect/",
+	"title": "Tạo các kết nối",
+	"tags": [],
+	"description": "",
+	"content": "Kết nối với EC2 sử dụng MobaXterm +Truy cập và xem Public IP của EC2 vừa tạo: +Tạo 1 Session mới Nhập Public IP của EC2 vào Remote Host. Specify username: ec2-user. Tích vào ô User private key. Tìm đường dẫn đến file key đã tải xuống. Nhấn ok. Đã kết nối thành công. Tiến hành cài đặt java cho EC2 sudo yum install java-17-amazon-corretto-headless. Nhập y. Kiểm tra phiên bản java Java -version cat /etc/*release.\nLệnh để xác định máy ảo linux thuộc phiên bản nào. ở phiên bản này sử dụng các câu lệnh sau:\nTrước tiên, cập nhật danh sách các gói để đảm bảo bạn có phiên bản mới nhất:\nsudo yum update -y. sudo yum install git -y Kiểm tra cài đặt git\ngit \u0026ndash;version\nClone project git clone https://github.com/minhhuu0511/spring-ec2.git Cài Maven sudo yum install maven -y Sau đó, kiểm tra Maven: mvn -version Tìm kiếm vị trí project Đi đến nơi chứa project bằng câu lệnh cd /home/ec2-user/spring-ec2 lỗi do phiên bản maven không đáp ứng yêu cầu. Tải phiên bản mới hơn. wget https://downloads.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz Giải nén tệp tải về và di chuyển thư mục đến vị trí phù hợp: tar -xzf apache-maven-3.9.9-bin.tar.gz sudo mv apache-maven-3.9.9 /usr/local/maven Thêm Maven vào biến môi trường PATH để dễ dàng truy cập: echo \u0026rsquo;export M2_HOME=/usr/local/maven\u0026rsquo; \u0026raquo; ~/.bash_profile echo \u0026rsquo;export PATH=$M2_HOME/bin:$PATH\u0026rsquo; \u0026raquo; ~/.bash_profile source ~/.bash_profile Mvn clean install để tạo file jar File jar tạo thành công trong thư mục. Di chuyển đến thư mục chứa file jar cd /home/ec2-user/spring-ec2/target/ Chạy file jar Java -jar employeemanagmentbackend-0.0.1-SNAPSHOT.jar Dùng postman để test các API, Public IP:8080/employee "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.4-create-ec2/",
+	"title": "Tạo Public Linux EC2",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập giao diện quản trị dịch vụ EC2: Click Instances. Click Launch instances. Tại trang Step 1: Choose an Amazon Machine Image (AMI).\nClick Select để lựa chọn AMI Amazon Linux 2 AMI. Tại trang Step 2: Choose an Instance Type.\nClick chọn Instance type t2.micro. Click Next: Configure Instance Details. Tại hộp thoại Key pair.\nClick chọn Create a new key pair. Tại mục Key pair name điền Web Server. Tại mục Key pair type chọn RSA. Tại mục Private Key format chọn .pem Click Create Key Pair và lưu xuống máy tính của bạn. Tại trang Network setting\nTại mục VPC chọn VPC Main.\nTại mục Subnet chọn Public Subnet 1.\nTại mục Auto-assign Public IP chọn Use subnet setting (Enable)\nChọn Select an existing security group.\nChọn security group Web Server SG.\nClick Launch Instances để tạo máy chủ EC2.\n"
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.5-create-rds/",
+	"title": "Tạo RDS ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Lab VPC Truy cập giao diện quản trị dịch vụ VPC: Click Database. Click Create Database. Click Standard create. Engine type: Click MySQL. Template: Free tier DB cluster identifier: Nhập employeeMS Chọn: Multi-AZ DB Cluster.\nMaster username: Nhập Admin. Credentials management: Chọn Self managed Bỏ chọn Auto generate password Nhập mật khẩu mong muốn. Các nội dung trên giữ nguyên như mặc định. Chọn Connect to an EC2 compute resource. EC2 instance: Chọn Web Server. DB subnet group: Choose existing. Existing DB subnet groups: db-subnet group. VPC security group (firewall): Choose existing. Additional VPC security group: RDS-SG. Database authentication options: Password authentication. Monitoring: có thể sử dụng hoặc không. Additional configuration: Initial database name employeeMS. Enable automated backups. Create Database. "
+},
+{
+	"uri": "//localhost:1313/4-cleanup/",
+	"title": "Dọn dẹp tài nguyên  ",
+	"tags": [],
+	"description": "",
+	"content": "Dọn dẹp các tài nguyên đã sử dụng Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\nRDS: Chọn database **employeems ** -\u0026gt; Action -\u0026gt; **delete **. Bỏ tích ở Create final snapshot và retain automated backups. Tích vào ô I acknowledge that upon instance deletion, automated backups …... Nhập delete me vào ô xác nhận và nhấn Delete. Dbsubnet group: chọn db-subnet group và chọn Delete. Chọn Delete. EC2: Chọn Web Server -\u0026gt; Instance state -\u0026gt; Terminate (delete) instance. Chọn Terminate (delete). VPC: Chọn VPC Main -\u0026gt; Action -\u0026gt; Delete VPC. "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
